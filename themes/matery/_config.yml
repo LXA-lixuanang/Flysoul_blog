@@ -221,7 +221,7 @@ postInfo:
 # Whether to activate the 'love' effect of clicking on the page.
 # 是否激活点击页面的'爱心'效果，默认激活.
 clicklove:
-  enable: false
+  enable: ture
 
 # | 文件名             | 说明                   |
 # | :----------------- | :--------------------- |
@@ -232,7 +232,7 @@ clicklove:
 # 默认事sakura.js，如需修改，请到下面地址修改
 # libs
 #   js:
-#     sakura: /libs/others/sakura-half.js
+#     sakura: /libs/others/sakura-small.js
 # 是否激活页面樱花效果, 只在桌面版网页启用特效
 # 下面三种特效建议选择一种就够了，
 sakura:
@@ -240,7 +240,7 @@ sakura:
 
 # 是否激活页面鼠标星星跟随效果, 只在桌面版网页启用特效
 mouseStar:
-  enable: true
+  enable: false
 
   # 是否激活页面飘雪效果, 只在桌面版网页启用特效
 snowdown:
