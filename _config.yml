@@ -102,3 +102,14 @@ theme: matery
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+# Live2D 看板娘配置
+ohmylive2d:
+  enable: true # 开启看板娘
+  models:
+    - path: /live2d-models/hijiki/hijiki.model3.json # 白猫模型路径
+      scale: 0.15 # 模型缩放比例，可根据实际效果微调
+      position: [0, 0] # 模型在舞台中的位置 [横坐标, 纵坐标]
+      stageStyle:
+        width: 300 # 舞台宽度
+        height: 300 # 舞台高度
+  mobileDisplay: ture # 是否在移动端显示（建议关闭，以免遮挡手机内容）
