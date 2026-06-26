@@ -29,17 +29,32 @@ if errorlevel 1 (
 :: 3. Git 操作 (添加、提交、推送)
 echo [3/4] Committing changes to Git...
 git add .
-:: 获取当前时间作为提交信息，方便区分版本
-for /f "tokens=2 delims==" %%a in ('wmic OS Get localdatetime /value') do set "dt=%%a"
-set "YY=%dt:~2,2%" & set "YYYY=%dt:~0,4%" & set "MM=%dt:~4,2%" & set "DD=%dt:~6,2%"
-set "HH=%dt:~8,2%" & set "Min=%dt:~10,2%" & set "Sec=%dt:~12,2%"
-set "timestamp=%YYYY%-%MM%-%DD% %HH%:%Min%"
 
-git commit -m "Auto deploy: %timestamp%"
+:: 检查是否有文件被修改，如果没有修改则跳过提交和推送
+git diff --cached --quiet
 if errorlevel 1 (
-    echo WARNING: No changes detected or commit failed. Skipping push.
-) else (
+    :: 有文件变动，获取当前时间作为提交信息
+    for /f "tokens=2 delims==" %%a in ('wmic OS Get localdatetime /value') do set "dt=%%a"
+    set "YY=%dt:~2,2%" & set "YYYY=%dt:~0,4%" & set "MM=%dt:~4,2%" & set "DD=%dt:~6,2%"
+    set "HH=%dt:~8,2%" & set "Min=%dt:~10,2%" & set "Sec=%dt:~12,2%"
+    set "timestamp=%YYYY%-%MM%-%DD% %HH%:%Min%"
+
+    git commit -m "Auto deploy: %timestamp%"
+    
     echo [4/4] Pushing to remote repository...
     git push origin main
     if errorlevel 1 (
-        echo ERROR: Push failed!
+        echo ERROR: Push failed! You might need to pull first or check network.
+        pause
+        exit /b
+    )
+) else (
+    echo WARNING: No changes detected. Skipping commit and push.
+)
+
+echo.
+echo ==========================================
+echo    Deployment Finished Successfully!
+echo ==========================================
+echo.
+pause
