@@ -100,13 +100,13 @@ music:
 # Whether to display the musics.
 # 单独的音乐页面.
 musics:
-  enable: false
+  enable: true
   title:          #非吸底模式有效
     enable: true
     show: 听听音乐
-  server: tencent   #require music platform: netease, tencent, kugou, xiami, baidu
+  server: netease  #require music platform: netease, tencent, kugou, xiami, baidu
   type: playlist    #require song, playlist, album, search, artist
-  id: 1776127550     #require song id / playlist id / album id / search keyword
+  id: 2159483968     #require song id / playlist id / album id / search keyword
   fixed: false      # 开启吸底模式
   autoplay: true   # 是否自动播放
   theme: '#42b983'
