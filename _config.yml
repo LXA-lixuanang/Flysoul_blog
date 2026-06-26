@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
+title: Flysoul的博客
+subtitle: '硬件折腾与 MC 创造实录'
+description: '记录垃圾佬的硬件改造之路与 Minecraft 的方块创造之旅。分享高性价比装机方案、服务器运维经验及游戏生存建筑心得。'
+keywords: [垃圾佬, 我的世界, Minecraft, 二手硬件, 服务器搭建, 高性价比, 游戏技巧, Flysoul]
 author: Flysoul
 language: zh-CN
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -40,7 +40,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 syntax_highlighter: highlight.js
